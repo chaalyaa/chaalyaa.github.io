@@ -62,9 +62,19 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-          console.log("Tes");
+        loadData();
 
-    })
+    });
+
+    function loadData() {
+        $.ajax({
+            url: "https://api.kawalcorona.com/indonesia",
+            type: "GET",
+            success: function(response) {
+                console.log(response);
+            }
+        });
+    }
 </script>
 </body>
 </html>
