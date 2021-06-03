@@ -37,6 +37,36 @@
 
 <div id="main-wrapper">
 
+    <div id="client-req">
+        <table>
+            <tr>
+                <td>Positif</td>
+                <td>:</td>
+                <td id="positif"></td>
+            </tr>
+            <tr>
+                <td>Dirawat</td>
+                <td>:</td>
+                <td id="dirawat"></td>
+            </tr>
+            <tr>
+                <td>Sembuh</td>
+                <td>:</td>
+                <td id="sembuh"></td>
+            </tr>
+            <tr>
+                <td>Meninggal</td>
+                <td>:</td>
+                <td id="meninggal"></td>
+            </tr>
+            <tr>
+                <td>Update Terakhir</td>
+                <td>:</td>
+                <td id="lastUpdate"></td>
+            </tr>
+
+        </table>
+    </div>
 
 </div>
 <!-- ============================================================== -->
@@ -63,15 +93,20 @@
 <script type="text/javascript">
     $(document).ready(function(){
         loadData();
-
     });
 
     function loadData() {
         $.ajax({
-            url: "https://api.kawalcorona.com/indonesia",
+            url: "https://apicovid19indonesia-v2.vercel.app/api/indonesia",
             type: "GET",
+            //dataType: "json",
             success: function(response) {
                 console.log(response);
+                if(response instanceof Object){
+                    $.each(response, function (idx, val) {
+                        $('#'+idx).html(val);
+                    })
+                }
             }
         });
     }
