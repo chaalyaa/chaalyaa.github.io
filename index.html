@@ -35,9 +35,16 @@
 
 <body>
 
+
 <div id="main-wrapper">
 
     <div id="client-req">
+        <h4>
+            Service untuk memperoleh data Pasien COVID
+        </h4>
+        <p>
+            Berikut merupakan informssi terkait data pasien COVID di Indonesia
+        </p>
         <table>
             <tr>
                 <td>Positif</td>
@@ -68,6 +75,18 @@
         </table>
     </div>
 
+    <hr>
+    <h4>
+        Service untuk mencari Profile Instagram
+    </h4>
+    <a href="server-req.php">Server Request</a>
+    &nbsp;&nbsp;
+
+    <form action="server-req.php" method="post">
+        <label></label>
+        <input type="text" name="inputReq" placeholder="Ketik username Instagram disini">
+        <button type="submit" name="sbmReq">Submit</button>
+    </form>
 </div>
 <!-- ============================================================== -->
 <!-- End Wrapper -->
